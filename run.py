@@ -1,7 +1,7 @@
 import search
 import time
 
-problem = search.GPSProblem('A', 'B', 
+problem = search.GPSProblem('O', 'E', 
                             search.romania)
 
 node_bfs, visited_bfs, generated_bfs, cost_bfs = search.breadth_first_graph_search(problem)
@@ -27,7 +27,7 @@ print("Branch and Bound without subestimation visited:", visited_bb)
 print("Branch and Bound without subestimation cost:", cost_bb)
 print("Branch and Bound without subestimation path:", node_bb.path())
 
-print()
+print("==============================")
 
 # Branch and Bound con subestimación
 node_bbw, visited_bbw, generated_bbw, cost_bbw = search.branch_and_bound_With(problem)
