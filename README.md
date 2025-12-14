@@ -186,3 +186,8 @@ Para poder mostrar los resultados por pantalla, se reutiliza la definición del 
 <img alt="resultado_ejecucion" src="images/result.png">
 
 Si se desean ver otros caminos, solo debe de cambiarse al inicio las letras que hacen referencia al origen y destino.
+
+### Tabla
+
+<img alt="tabla" src="images/tabla_realizada.png">
+
