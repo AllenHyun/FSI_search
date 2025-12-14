@@ -98,28 +98,45 @@ def graph_search(problem, fringe):
     The argument fringe should be an empty queue.
     If two paths reach a state, only use the best one. [Fig. 3.18]"""
     closed = {}
+
+    visited_nodes = 0
+    generated_nodes = 1
+    cost = 0
+
     fringe.append(Node(problem.initial))
+    visited_nodes += 1
+
     while fringe:
         node = fringe.pop()
+
         if problem.goal_test(node.state):
-            return node
+            cost = node.path_cost
+            return node, visited_nodes, generated_nodes, cost
+
         if node.state not in closed:
             closed[node.state] = True
-            fringe.extend(node.expand(problem))
-    return None
+            children = node.expand(problem)
+            fringe.extend(children)
+            generated_nodes += len(children)
+
+        visited_nodes += 1
+
+    return None, visited_nodes, generated_nodes, cost
 
 
 def breadth_first_graph_search(problem):
     """Search the shallowest nodes in the search tree first. [p 74]"""
     return graph_search(problem, FIFOQueue())  # FIFOQueue -> fringe
 
-
 def depth_first_graph_search(problem):
     """Search the deepest nodes in the search tree first. [p 74]"""
     return graph_search(problem, Stack())
 
+def branch_and_bound_Without(problem):
+    return graph_search(problem, Branch_and_Bound_Without_Subestimation())
 
-
+def branch_and_bound_With(problem):
+    return graph_search(problem, Branch_and_Bound_With_Subestimation(problem))
 # _____________________________________________________________________________
 # The remainder of this file implements examples for the search algorithms.
 
