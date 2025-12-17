@@ -47,7 +47,7 @@ En primer lugar, lo que se hizo es cambiar la función graph_search() para poder
 
 Dentro de un diccionario se van guardando los nodos que ya han sido visitados para no entorpecer la exploración. Los nodos visitados se inicializan en 0, mientras que los generdos empiezan en 1 porque ya se cuenta el nodo inicial. La variable cost almacena el coste de la solución encontrada en la búsqueda.
 
-Se crea un nodo inicial, se que meto dentro del finge y se aumenta en 1 el número de nodos visitados.
+Se crea un nodo inicial, se mete dentro del fringe y se aumenta en 1 el número de nodos visitados.
 
 ``` python
 def graph_search(problem, fringe):
